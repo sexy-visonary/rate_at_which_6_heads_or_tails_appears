@@ -34,4 +34,4 @@ for x in range(len(HeadTailList)):
 #prints out results here
 print('6 tails in a row: ' + str(heads))
 print('6 tails in a row: ' + str(tails))
-print(str((heads + tails) / 1000) + '% of coin flip sets had 6 in a row')
+print(str((heads + tails) / 1000) + '% of coin flips had 6 in a row')
