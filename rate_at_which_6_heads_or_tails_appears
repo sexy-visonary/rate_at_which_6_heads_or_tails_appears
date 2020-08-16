@@ -1,0 +1,37 @@
+#variables
+import random
+heads = 0
+tails = 0
+headsforloopcount = 0
+tailsforloopcount = 0
+HeadTailList = []
+
+#flips coin 1000 times
+for x in range(0, 1000):
+    HeadTailList.append(random.randint(0, 1))
+
+#checks coin flips for 6 in a row
+#checks heads here
+for x in range(len(HeadTailList)):
+    for HeadsOrTails in HeadTailList[x:x + 6]:
+        if HeadTailList[x] == 0:
+            headsforloopcount += 1
+    if headsforloopcount == 6:
+        heads += 1
+    else:
+        break
+
+#checks tails here
+for x in range(len(HeadTailList)):
+    for HeadsOrTails in HeadTailList[x:x + 6]:
+        if HeadTailList[x] == 1:
+            tailsforloopcount += 1
+    if tailsforloopcount == 6:
+        tails += 1
+    else:
+        break
+
+#prints out results here
+print('6 tails in a row: ' + str(heads))
+print('6 tails in a row: ' + str(tails))
+print(str((heads + tails) / 1000) + '% of coin flip sets had 6 in a row')
